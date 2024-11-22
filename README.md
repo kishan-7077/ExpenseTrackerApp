@@ -16,6 +16,23 @@ This is an **Expo-based React Native** application designed to help users manage
 - **💰 Expenses Overview:** View a summary of what you owe and what you are owed.
 - **📝 Transaction History:** View detailed transaction histories for each user.
 
+## 📸 Screenshots
+
+### 🏠 Home Screen
+Displays a list of users and their balances.
+
+<img src="assets/screenshots/expense1.jpg" alt="Home Screen" width="300" />
+
+### ➕ Add Expense Screen
+Allows users to add a new transaction by giving or receiving money.
+
+<img src="assets/screenshots/expense2.jpg" alt="Add Screen" width="300" />
+
+### 📜 Transaction History Screen
+Shows the transaction history of a specific user.
+
+<img src="assets/screenshots/expense3.jpg" alt="History Screen" width="300" />
+
 ## Installation
 
 To run the project locally, follow these steps:
