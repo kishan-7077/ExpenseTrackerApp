@@ -7,13 +7,24 @@ import axios from "axios";
 
 const Main = ({ navigation }) => {
 	const [users, setUsers] = useState([]);
+	const [refreshing, setRefreshing] = useState(false);
 
-	useEffect(() => {
+	const fetchData = async () => {
 		axios
 			.get("http://192.168.1.7:5000/api/users/")
 			.then((res) => setUsers(res.data.reverse()))
 			.catch((err) => console.error(err));
+	};
+
+	useEffect(() => {
+		fetchData();
 	}, []);
+
+	const onRefresh = async () => {
+		setRefreshing(true);
+		await fetchData();
+		setRefreshing(false);
+	};
 
 	const calculateTotal = (amountToGive, amountTaken) => {
 		return amountTaken - amountToGive;
@@ -60,6 +71,8 @@ const Main = ({ navigation }) => {
 			renderItem={renderItem}
 			keyExtractor={(item) => item._id}
 			style={styles.list}
+			refreshing={refreshing}
+			onRefresh={onRefresh}
 		/>
 	);
 };
